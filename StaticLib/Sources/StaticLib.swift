@@ -7,6 +7,6 @@
 
 public class StaticLib {
 
-    public let foo = "bar"
+    public static let foo = "bar"
 
 }
