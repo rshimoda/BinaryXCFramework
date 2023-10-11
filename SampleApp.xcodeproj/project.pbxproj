@@ -217,11 +217,10 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/StaticLib/libStaticLib.a",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# This prevents Xcode 15 Beta from failing with error\n# \"Build input file cannot be found: \n#'/BuildProductsPath/Release-iphoneos/XCFrameworkIntermediates/StaticLib/libStaticLib.a'.\"\n";
+			shellScript = "# Add the following line into 'Output Files' section to fix the build on Xcode 15:\n# ${PODS_XCFRAMEWORKS_BUILD_DIR}/StaticLib/libStaticLib.a\n";
 			showEnvVarsInLog = 0;
 		};
 		E5739F35FB34E1C174484016 /* [CP] Check Pods Manifest.lock */ = {
