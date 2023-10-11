@@ -3,7 +3,84 @@
     "kind": "Root",
     "name": "TopLevel",
     "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "TypeDecl",
+        "name": "Foo",
+        "printedName": "Foo",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "foo",
+            "printedName": "foo",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9StaticLib3FooC3fooSSvpZ",
+            "mangledName": "$s9StaticLib3FooC3fooSSvpZ",
+            "moduleName": "StaticLib",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9StaticLib3FooC3fooSSvgZ",
+                "mangledName": "$s9StaticLib3FooC3fooSSvgZ",
+                "moduleName": "StaticLib",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:9StaticLib3FooC",
+        "mangledName": "$s9StaticLib3FooC",
+        "moduleName": "StaticLib",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "hasMissingDesignatedInitializers": true
+      }
+    ],
     "json_format_version": 8
   },
-  "ConstValues": []
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/sergi\/Developer\/BinaryXCFramework\/StaticLib\/Sources\/StaticLib.swift",
+      "kind": "StringLiteral",
+      "offset": 146,
+      "length": 5,
+      "value": "\"bar\""
+    }
+  ]
 }

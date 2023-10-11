@@ -1,0 +1,11 @@
+module StaticLib {
+    umbrella header "StaticLib.h"
+
+    export *
+    module * { export * }
+}
+
+module StaticLib.Swift {
+    header "StaticLib-Swift.h"
+    requires objc
+}

@@ -37,6 +37,8 @@
 		557236AC2AD021D0007006CB /* StaticLib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StaticLib.swift; path = Sources/StaticLib.swift; sourceTree = "<group>"; };
 		55D81E9B2AD42E1D008E4220 /* libStaticLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStaticLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D81EA42AD4304D008E4220 /* build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = build.sh; path = StaticLib/Scripts/build.sh; sourceTree = "<group>"; };
+		55D81EC52AD45866008E4220 /* StaticLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = StaticLib.h; path = Sources/StaticLib.h; sourceTree = "<group>"; };
+		55D81EC72AD45874008E4220 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = Sources/module.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,8 @@
 		557236AB2AD021D0007006CB /* StaticLib */ = {
 			isa = PBXGroup;
 			children = (
+				55D81EC52AD45866008E4220 /* StaticLib.h */,
+				55D81EC72AD45874008E4220 /* module.modulemap */,
 				557236AC2AD021D0007006CB /* StaticLib.swift */,
 			);
 			path = StaticLib;
@@ -93,6 +97,7 @@
 				557236A62AD021D0007006CB /* Sources */,
 				557236A72AD021D0007006CB /* Frameworks */,
 				557236A82AD021D0007006CB /* CopyFiles */,
+				55D81EC32AD455EC008E4220 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -110,6 +115,7 @@
 				55D81E942AD42E1D008E4220 /* Sources */,
 				55D81E962AD42E1D008E4220 /* Frameworks */,
 				55D81E972AD42E1D008E4220 /* CopyFiles */,
+				55D81EC42AD45645008E4220 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -153,6 +159,51 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		55D81EC32AD455EC008E4220 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/StaticLib/Sources/StaticLib.h",
+				"$(SRCROOT)/StaticLib/Sources/module.modulemap",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./StaticLib/Scripts/copy_lib_public_headers_to_public_headers_folder.sh\n";
+			showEnvVarsInLog = 0;
+		};
+		55D81EC42AD45645008E4220 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/StaticLib/Sources/StaticLib.h",
+				"$(SRCROOT)/StaticLib/Sources/module.modulemap",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./StaticLib/Scripts/copy_lib_public_headers_to_public_headers_folder.sh\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		557236A62AD021D0007006CB /* Sources */ = {
@@ -296,7 +347,9 @@
 		557236AF2AD021D0007006CB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = StaticLib;
 				SKIP_INSTALL = YES;
@@ -308,7 +361,9 @@
 		557236B02AD021D0007006CB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = StaticLib;
 				SKIP_INSTALL = YES;
@@ -320,7 +375,9 @@
 		55D81E992AD42E1D008E4220 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = StaticLib;
 				SDKROOT = macosx;
@@ -333,7 +390,9 @@
 		55D81E9A2AD42E1D008E4220 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = StaticLib;
 				SDKROOT = macosx;

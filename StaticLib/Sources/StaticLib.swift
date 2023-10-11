@@ -5,7 +5,7 @@
 //  Created by Сергій Попов on 06.10.2023.
 //
 
-public class StaticLib {
+public class Foo {
 
     public static let foo = "bar"
 

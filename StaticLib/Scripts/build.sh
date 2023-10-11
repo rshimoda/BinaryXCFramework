@@ -4,7 +4,10 @@
 #  BinaryXCFramework
 #
 #  Created by Сергій Попов on 09.10.2023.
-#  
+#
+
+echo "Cleaning up"
+rm -rf "StaticLib.xcframework"
 
 # Paths to the static libraries
 ios_lib="StaticLib-iOS"
@@ -58,11 +61,15 @@ $XCODEBUILD_COMMAND \
 
 # create xcframework
 echo "Creating an XCFramework"
+#xcodebuild -create-xcframework \
+#    -library "${derived_data_ios}/iOS/Build/Products/Release-iphoneos/libStaticLib.a" \
+#    -library "${derived_data_ios}/iOS-Simulator/Build/Products/Release-iphonesimulator/libStaticLib.a" \
+#    -library "${derived_data_macos}/Catalyst/Build/Products/Release-maccatalyst/libStaticLib.a" \
+#    -library "${derived_data_macos}/macOS/Build/Products/Release/libStaticLib.a" \
+#    -output "./StaticLib.xcframework"
+
 xcodebuild -create-xcframework \
-    -library "${derived_data_ios}/iOS/Build/Products/Release-iphoneos/libStaticLib.a" \
     -library "${derived_data_ios}/iOS-Simulator/Build/Products/Release-iphonesimulator/libStaticLib.a" \
-    -library "${derived_data_macos}/Catalyst/Build/Products/Release-maccatalyst/libStaticLib.a" \
-    -library "${derived_data_macos}/macOS/Build/Products/Release/libStaticLib.a" \
     -output "./StaticLib.xcframework"
 
 # cleanup
